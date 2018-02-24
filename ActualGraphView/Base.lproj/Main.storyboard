@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kl3-II-D3U">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--AAPL-->
+        <scene sceneID="V81-bA-lMh">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="PYg-hp-Q74" customClass="ViewController" customModule="ActualGraphView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vrf-Fn-twW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9C-uT-qmT" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="2" y="66" width="375" height="301"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9o-uI-V7j">
+                                <rect key="frame" x="16" y="411" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gain Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apu-4C-Qoy">
+                                <rect key="frame" x="16" y="448" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$167.23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-rC-SX0">
+                                <rect key="frame" x="298" y="411" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.35%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKQ-mS-0oD">
+                                <rect key="frame" x="311" y="448" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zQD-R4-b9m">
+                                <rect key="frame" x="16" y="375" width="343" height="29"/>
+                                <segments>
+                                    <segment title="1 Month"/>
+                                    <segment title="3 Months"/>
+                                    <segment title="YTD"/>
+                                </segments>
+                                <connections>
+                                    <action selector="xAxisChanged:" destination="PYg-hp-Q74" eventType="valueChanged" id="y5c-on-TPY"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zQD-R4-b9m" firstAttribute="leading" secondItem="dGP-wr-mPa" secondAttribute="leading" constant="16" id="2dA-Qk-ikc"/>
+                            <constraint firstItem="dGP-wr-mPa" firstAttribute="trailing" secondItem="zQD-R4-b9m" secondAttribute="trailing" constant="16" id="6yP-kN-Myb"/>
+                            <constraint firstItem="b9C-uT-qmT" firstAttribute="top" secondItem="dGP-wr-mPa" secondAttribute="top" constant="2" id="7XM-KE-0hZ"/>
+                            <constraint firstItem="ywl-rC-SX0" firstAttribute="top" secondItem="r9o-uI-V7j" secondAttribute="top" id="8Ge-Nz-lx0"/>
+                            <constraint firstItem="zQD-R4-b9m" firstAttribute="centerX" secondItem="dGP-wr-mPa" secondAttribute="centerX" id="B16-UI-FP4"/>
+                            <constraint firstItem="dGP-wr-mPa" firstAttribute="bottom" secondItem="b9C-uT-qmT" secondAttribute="bottom" constant="300" id="CxG-7i-hZa"/>
+                            <constraint firstItem="r9o-uI-V7j" firstAttribute="leading" secondItem="dGP-wr-mPa" secondAttribute="leading" constant="16" id="WDM-gp-qfR"/>
+                            <constraint firstItem="r9o-uI-V7j" firstAttribute="top" secondItem="zQD-R4-b9m" secondAttribute="bottom" constant="8" id="Wbm-0E-jM0"/>
+                            <constraint firstItem="apu-4C-Qoy" firstAttribute="leading" secondItem="r9o-uI-V7j" secondAttribute="leading" id="aJy-jt-6NQ"/>
+                            <constraint firstItem="zQD-R4-b9m" firstAttribute="top" secondItem="b9C-uT-qmT" secondAttribute="bottom" constant="8" id="d96-iF-weB"/>
+                            <constraint firstItem="dGP-wr-mPa" firstAttribute="trailing" secondItem="KKQ-mS-0oD" secondAttribute="trailing" constant="16" id="n20-ZO-TdI"/>
+                            <constraint firstItem="KKQ-mS-0oD" firstAttribute="top" secondItem="ywl-rC-SX0" secondAttribute="bottom" constant="16" id="n3b-qv-v8Q"/>
+                            <constraint firstItem="b9C-uT-qmT" firstAttribute="leading" secondItem="Vrf-Fn-twW" secondAttribute="leading" constant="2" id="nbB-Tw-tcH"/>
+                            <constraint firstItem="b9C-uT-qmT" firstAttribute="trailing" secondItem="dGP-wr-mPa" secondAttribute="trailing" constant="2" id="rLE-qI-fhY"/>
+                            <constraint firstItem="KKQ-mS-0oD" firstAttribute="trailing" secondItem="ywl-rC-SX0" secondAttribute="trailing" id="yCS-27-IsY"/>
+                            <constraint firstItem="dGP-wr-mPa" firstAttribute="trailing" secondItem="ywl-rC-SX0" secondAttribute="trailing" constant="16" id="yZK-CX-dyO"/>
+                            <constraint firstItem="apu-4C-Qoy" firstAttribute="top" secondItem="r9o-uI-V7j" secondAttribute="bottom" constant="16" id="ysM-Or-xQa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dGP-wr-mPa"/>
                     </view>
+                    <navigationItem key="navigationItem" title="AAPL" id="6g2-3A-Py9"/>
+                    <connections>
+                        <outlet property="currentPriceLabel" destination="ywl-rC-SX0" id="e3Z-SP-B7e"/>
+                        <outlet property="gainLabel" destination="apu-4C-Qoy" id="h2t-e4-AlE"/>
+                        <outlet property="lineChartView" destination="b9C-uT-qmT" id="dSk-Dz-k51"/>
+                        <outlet property="percentGainLabel" destination="KKQ-mS-0oD" id="tNZ-be-QyZ"/>
+                        <outlet property="segmentedControl" destination="zQD-R4-b9m" id="sWd-5R-jRv"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uo1-du-23L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="180" y="151.57421289355324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sDh-Zz-dJm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kl3-II-D3U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XBn-RH-HJB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PYg-hp-Q74" kind="relationship" relationship="rootViewController" id="uV6-bP-4jv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luh-6y-emC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1094" y="152"/>
         </scene>
     </scenes>
 </document>
