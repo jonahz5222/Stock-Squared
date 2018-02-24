@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D871EEE2042271100D9A95E /* LandMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D871EED2042271100D9A95E /* LandMainViewController.swift */; };
+		3D871EF12042297E00D9A95E /* CustomStockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D871EEF2042297E00D9A95E /* CustomStockCollectionViewCell.swift */; };
+		3D871EF22042297E00D9A95E /* CustomStockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D871EF02042297E00D9A95E /* CustomStockCollectionViewCell.xib */; };
+		3D871EF520422AC200D9A95E /* StockBlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D871EF320422AC200D9A95E /* StockBlockCollectionViewCell.swift */; };
+		3D871EF620422AC200D9A95E /* StockBlockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D871EF420422AC200D9A95E /* StockBlockCollectionViewCell.xib */; };
 		83545787204168B800D50CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83545786204168B800D50CC5 /* AppDelegate.swift */; };
 		8354578C204168B800D50CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8354578A204168B800D50CC5 /* Main.storyboard */; };
 		8354578F204168B800D50CC5 /* ActualGraphView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8354578D204168B800D50CC5 /* ActualGraphView.xcdatamodeld */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D871EED2042271100D9A95E /* LandMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMainViewController.swift; sourceTree = "<group>"; };
+		3D871EEF2042297E00D9A95E /* CustomStockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStockCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D871EF02042297E00D9A95E /* CustomStockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomStockCollectionViewCell.xib; sourceTree = "<group>"; };
+		3D871EF320422AC200D9A95E /* StockBlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockBlockCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D871EF420422AC200D9A95E /* StockBlockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockBlockCollectionViewCell.xib; sourceTree = "<group>"; };
 		6958BB73CFF32FF56CF0F1DC /* Pods-ActualGraphView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActualGraphView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ActualGraphView/Pods-ActualGraphView.debug.xcconfig"; sourceTree = "<group>"; };
 		83545783204168B800D50CC5 /* ActualGraphView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActualGraphView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83545786204168B800D50CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,11 @@
 				83545786204168B800D50CC5 /* AppDelegate.swift */,
 				8354578A204168B800D50CC5 /* Main.storyboard */,
 				8354579B20416AE500D50CC5 /* ViewController.swift */,
+				3D871EEF2042297E00D9A95E /* CustomStockCollectionViewCell.swift */,
+				3D871EF320422AC200D9A95E /* StockBlockCollectionViewCell.swift */,
+				3D871EF420422AC200D9A95E /* StockBlockCollectionViewCell.xib */,
+				3D871EF02042297E00D9A95E /* CustomStockCollectionViewCell.xib */,
+				3D871EED2042271100D9A95E /* LandMainViewController.swift */,
 				83545790204168B900D50CC5 /* Assets.xcassets */,
 				83545792204168B900D50CC5 /* LaunchScreen.storyboard */,
 				83545795204168B900D50CC5 /* Info.plist */,
@@ -153,6 +168,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D871EF22042297E00D9A95E /* CustomStockCollectionViewCell.xib in Resources */,
+				3D871EF620422AC200D9A95E /* StockBlockCollectionViewCell.xib in Resources */,
 				83545794204168B900D50CC5 /* LaunchScreen.storyboard in Resources */,
 				83545791204168B900D50CC5 /* Assets.xcassets in Resources */,
 				8354578C204168B800D50CC5 /* Main.storyboard in Resources */,
@@ -226,9 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D871EF12042297E00D9A95E /* CustomStockCollectionViewCell.swift in Sources */,
 				8354579C20416AE600D50CC5 /* ViewController.swift in Sources */,
 				8354578F204168B800D50CC5 /* ActualGraphView.xcdatamodeld in Sources */,
+				3D871EEE2042271100D9A95E /* LandMainViewController.swift in Sources */,
 				83545787204168B800D50CC5 /* AppDelegate.swift in Sources */,
+				3D871EF520422AC200D9A95E /* StockBlockCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
