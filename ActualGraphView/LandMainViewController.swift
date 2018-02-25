@@ -8,8 +8,14 @@
 
 import UIKit
 
+
+
 class LandMainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    
+    
+    var lengthyLabel = MarqueeLabel.init(frame: aFrame, duration: 8.0, fadeLength: 10.0)
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
