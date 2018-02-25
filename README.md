@@ -17,6 +17,7 @@ Enter Stock<sup>2</sup>, an iOS application for investors on the go who need inf
 * Real Estate
 * Consumer Services
 * Media
+
 Users can select a sector on the screen to get a close up view of what investments it has to offer. Each sector presents 12 stocks to the user that represent the highest value, highest grossing investments. Our design hopes to strike a balance between not overwhelming the user and providing them with a wide berth of knowledge. Each stock is color coded to represent its growth (or lack there of). Shades of red represent a decline in value, while increasingly bright shades of green represent growth. Further, users can select individual stocks to see a graph of the stock's history and more detailed information.
 
 ## The How
