@@ -224,26 +224,25 @@ class ViewController: UIViewController {
         var symbols : [String] = []
         var changearray : [StockChange] = []
         for sector in sectors {
-            for stock in sector.value {
+            for stock in Array(sector.value[0...15]) {
                 symbols.append(stock.symbol)
-            }
-        }
-        let query : String = symbols.joined(separator: ",")
-        
-        Alamofire.request("https://api.iextrading.com/1.0/stock/market/batch?symbols=" + query + "&types=chart&range=1m").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                if let data = response.data {
-                    let json = JSON(data: data)
-                    for (symbol, object) in json {
-                        changearray.append(StockChange(symbol: symbol, changeOverTime: Double(String(describing: object["chart"].array?.last!["changeOverTime"]))!))
-                    }
+                let query : String = symbols.joined(separator: ",")
+                Alamofire.request("https://api.iextrading.com/1.0/stock/market/batch?symbols=" + query + "&types=chart&range=1m").responseJSON { response in
+                    print("Request: \(String(describing: response.request))")   // original url request
+                    print("Response: \(String(describing: response.response))") // http url response
+                    print("Result: \(response.result)")                         // response serialization result
                     
+                    if let json = response.result.value {
+                        if let data = response.data {
+                            let json = JSON(data: data)
+                            for (symbol, object) in json {
+                                changearray.append(StockChange(symbol: symbol, changeOverTime: Double(String(describing: object["chart"].array?.last!["changeOverTime"]))!))
+                            }
+                            
+                        }
+                    }
                 }
-                
+                symbols = []
             }
             
         }
