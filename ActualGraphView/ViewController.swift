@@ -24,7 +24,10 @@ class ViewController: UIViewController {
     
     let urlMonth = "https://api.iextrading.com/1.0/stock/HD/chart/1m"
     
-    
+    struct Stock {
+        let symbol: String
+        let marketPercent: Double
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,6 +138,85 @@ class ViewController: UIViewController {
         
         return averageArray
     }
+    
+    func chooseStocks(from url : String) -> [String : [Stock]] {
+        
+        var stocklist : [String : [Stock]] = ["Energy" : [], "Materials" : [], "Industrial" : [], "Consumer Goods" : [], "Health Care" : [], "Financial" : [], "Technology" : [], "Telecommunication Services" : [], "Utilities" : [], "Real Estate" : [], "Consumer Services" : [], "Media" : []]
+        
+        
+        let jsonFilePath:String = Bundle.main.path(forResource: "data", ofType: "json")!
+        let url = URL(fileURLWithPath: jsonFilePath)
+        var dataJson: Data?
+        do {
+            dataJson = try Data(contentsOf: url)
+        }
+        catch {}
+        let json = try JSON(dataJson)
+
+        for (_, object) in json {
+            switch object["sector"] {
+                case "technologyhardwareequipmen" :
+                    stocklist["Technology"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "telecommunicationservices" :
+                    stocklist["Telecommunication Services"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "foodbeveragetobacco" :
+                    stocklist["Consumer Goods"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "energy" :
+                    stocklist["Energy"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "softwareservices" :
+                    stocklist["Technology"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "semiconductorssemiconductor" :
+                    stocklist["Technology"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "automobilescomponents" :
+                    stocklist["Industrial"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "media" :
+                    stocklist["Media"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "pharmaceuticalsbiotechnology" :
+                    stocklist["Health Care"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "banks" :
+                    stocklist["Financial"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "foodstaplesretailing" :
+                    stocklist["Consumer Goods"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "diversifiedfinancials" :
+                    stocklist["Financial"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "realestate" :
+                    stocklist["Real Estate"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "utilities" :
+                    stocklist["Utilities"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "transportation" :
+                    stocklist["Consumer Services"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "consumerservices" :
+                    stocklist["Consumer Services"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "healthcareequipmentservic" :
+                    stocklist["Health Care"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "retailing" :
+                    stocklist["Consumer Goods"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "householdpersonalproducts" :
+                    stocklist["Consumer Goods"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "consumerdurablesapparel" :
+                    stocklist["Consumer Goods"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                case "commercialprofessionalserv" :
+                    stocklist["Consumer Services"]?.append(Stock(symbol: String(describing: object["symbol"]), marketPercent: Double(String(describing: object["marketPercent"]))!))
+                default :
+                    break
+            }
+        }
+        
+        for var sector in stocklist {
+            sector.value  = sector.value.sorted(by: { (firstStock, secondStock) -> Bool in
+                if firstStock.marketPercent > secondStock.marketPercent {
+                    return true
+                }
+                return false
+            })
+        }
+
+        return stocklist
+
+    }
+    
+
+}
 
     /*
     // MARK: - Navigation
@@ -146,4 +228,3 @@ class ViewController: UIViewController {
     }
     */
 
-}
