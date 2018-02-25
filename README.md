@@ -1,5 +1,7 @@
 # Stock<sup>2</sup>
 
+[The Contributors](Contributors.md)
+
 ## The Issue
 Stock profiles have a lot of information, and it's easy to look at individual stock profiles and determine their growth rate. But what if you want to watch large numbers of stocks at once? It can be hard to digest large quantities of information when it isn't presented in an intelligent, user-first manner.
 
@@ -25,3 +27,4 @@ Using the Investor's Exchange (IEX) API, we are able to source a selection of st
 
 ## The Why
 Stock Squared leverages unique design principles to enhance financial literacy and simplify new stock discovery. We want to illustrate that no stock exists in a vacuum and help put financial data in the hands of consumers in an easy to understand fashion. The everyday person struggles to know where to start with investment, and by simplifying the process we hope to ease the journey.
+
