@@ -28,3 +28,4 @@ Using the Investor's Exchange (IEX) API, we are able to source a selection of st
 ## The Why
 Stock Squared leverages unique design principles to enhance financial literacy and simplify new stock discovery. We want to illustrate that no stock exists in a vacuum and help put financial data in the hands of consumers in an easy to understand fashion. The everyday person struggles to know where to start with investment, and by simplifying the process we hope to ease the journey.
 
+[How to Contribute Yourself!](Contributing.md)
