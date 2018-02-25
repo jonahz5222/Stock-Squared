@@ -1,4 +1,4 @@
-# Stock-Squared
+# Stock<sup>2</sup>
 
 ## The Issue
 Stock profiles have a lot of information, and it's easy to look at individual stock profiles and determine their growth rate. But what if you want to watch large numbers of stocks at once? It can be hard to digest large quantities of information when it isn't presented in an intelligent, user-first manner.
